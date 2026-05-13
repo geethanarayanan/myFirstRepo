@@ -1,0 +1,8 @@
+code,name,descr
+email_sent,Email Sent,Collection email sent to customer
+order_hold,Order Hold,Customer orders placed on hold
+dispute_escalation,Dispute Escalation,Case escalated to dispute resolution
+collection_agency,Collection Agency,Account referred to collection agency
+promise_to_pay,Promise to Pay,Customer committed to payment date
+no_action,No Action,No action taken this cycle
+promise_broken,Promise Broken,Customer missed committed payment date

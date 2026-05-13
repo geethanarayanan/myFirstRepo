@@ -1,0 +1,31 @@
+{
+  "name": "collections-workbench-cap",
+  "version": "1.0.0",
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9"
+  },
+  "devDependencies": {
+    "@cap-js/cds-test": "^1.0.1",
+    "@cap-js/sqlite": "^2.4",
+    "@sap/cds-dk": "^9.9.1",
+    "jest": "^30.4.2"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "dev:cap": "cds watch",
+    "dev:ui": "npm run dev --workspace=ui",
+    "build": "npm run build --workspace=ui && cds build --production",
+    "preview": "npm run build --workspace=ui && cds watch",
+    "test": "jest --testEnvironment node --forceExit"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "auth": "dummy"
+    }
+  },
+  "workspaces": [
+    "ui"
+  ]
+}

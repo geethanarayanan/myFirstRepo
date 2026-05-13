@@ -1,0 +1,11 @@
+apiVersion: asset.sap/v1
+kind: Asset
+
+metadata:
+  name: collections-reminder-n8n
+  version: 1.0.0
+  description: n8n workflows for automated payment reminder escalation sequences, payment promise follow-up, and weekly AR portfolio summaries.
+
+type: n8n-workflow
+
+sourceRoot: "workflows"

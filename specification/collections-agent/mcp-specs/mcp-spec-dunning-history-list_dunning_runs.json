@@ -1,0 +1,46 @@
+{
+  "name": "list_dunning_runs",
+  "title": "list_dunning_runs",
+  "description": "Retrieve a list of dunning run headers from the CADunning collection. Each entry represents a dunning run for a business partner and contract account. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties.",
+  "mcp_server_ord_id": "sap.mcpbuilder:apiResource:contract_accounting_dunning_history_mcp_demo:v1",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [],
+    "properties": {
+      "filter": { "title": "filter", "description": "OData $filter expression", "type": "string" },
+      "select": { "title": "select", "description": "OData $select — comma-separated property names", "type": "string" },
+      "orderby": { "title": "orderby", "description": "OData $orderby — property name + asc/desc", "type": "string" },
+      "top": { "title": "top", "description": "OData $top — max number of results", "type": "integer", "minimum": 0 },
+      "skip": { "title": "skip", "description": "OData $skip — skip N results for pagination", "type": "integer", "minimum": 0 },
+      "expand": { "title": "expand", "description": "OData $expand — include related entities", "type": "string" },
+      "count": { "title": "count", "description": "OData $count — include total count in response", "type": "boolean" }
+    }
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "CAMassRunDate": { "type": "string", "description": "Mass run date" },
+            "CAMassRunID": { "maxLength": 6, "type": "string", "description": "Mass run ID" },
+            "BusinessPartner": { "maxLength": 10, "type": "string", "description": "Business partner number" },
+            "ContractAccount": { "maxLength": 12, "type": "string", "description": "Contract account" },
+            "CADunningCounter": { "maxLength": 6, "type": "string", "description": "Dunning counter" },
+            "CADunningLevel": { "maxLength": 2, "type": "string", "description": "Dunning level" },
+            "CADunningBalance": { "type": "number", "description": "Total dunning balance" },
+            "TransactionCurrency": { "maxLength": 3, "type": "string", "description": "Currency" },
+            "CACollectionStep": { "maxLength": 4, "type": "string", "description": "Current collection step" },
+            "CANextDunningDate": { "type": ["string","null"], "description": "Next scheduled dunning date" },
+            "CAIsSubmittedToCollAgency": { "type": "boolean", "description": "Whether submitted to collection agency" },
+            "CADunningNoticeIsReversed": { "type": "boolean", "description": "Whether dunning notice is reversed" },
+            "_DunItem": { "type": "array", "description": "Expanded dunned items" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: collections-workbench-ff3a4
+  version: 1.0.0
+  description: Collections workbench for overdue customer receivables with automated payment reminder sequences and an AI assistant that drafts personalised collection emails and recommends escalation actions.
+
+assets:
+  - ref: ./assets/collections-workbench-cap/asset.yaml
+  - ref: ./assets/n8n/asset.yaml
+  - ref: ./assets/collections-agent/asset.yaml

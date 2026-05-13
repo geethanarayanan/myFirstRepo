@@ -1,0 +1,7 @@
+customerId,customerName,companyCode,totalOverdue,currency,agingBucket_code,dunningLevel,collectionStep,creditRiskClass,hasOpenDispute,lastRefreshedAt
+BP001,Acme Corp,1000,15200.00,EUR,1-30,01,ST1,A,false,2026-05-13T06:00:00Z
+BP002,Globex Industries,1000,45000.00,EUR,31-60,02,ST2,B,false,2026-05-13T06:00:00Z
+BP003,Initech Solutions,1000,8700.00,USD,1-30,01,ST1,A,false,2026-05-13T06:00:00Z
+BP004,Umbrella Ltd,1000,92000.00,EUR,61-90,03,ST3,C,true,2026-05-13T06:00:00Z
+BP005,Stark Enterprises,1000,3200.00,EUR,1-30,01,ST1,A,false,2026-05-13T06:00:00Z
+BP006,Consolidated Shipping,1000,125000.00,EUR,90+,04,ST4,D,false,2026-05-13T06:00:00Z

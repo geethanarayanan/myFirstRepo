@@ -1,0 +1,46 @@
+{
+  "name": "list_dunned_items",
+  "title": "list_dunned_items",
+  "description": "Retrieve a list of dunned items from the CADunningItem collection. Each entry represents an individual dunned document item within a dunning run, including dunned amount, due date, and dunning level.",
+  "mcp_server_ord_id": "sap.mcpbuilder:apiResource:contract_accounting_dunning_history_mcp_demo:v1",
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [],
+    "properties": {
+      "filter": { "title": "filter", "description": "OData $filter expression", "type": "string" },
+      "select": { "title": "select", "description": "OData $select â comma-separated property names", "type": "string" },
+      "orderby": { "title": "orderby", "description": "OData $orderby", "type": "string" },
+      "top": { "title": "top", "description": "OData $top", "type": "integer", "minimum": 0 },
+      "skip": { "title": "skip", "description": "OData $skip", "type": "integer", "minimum": 0 },
+      "expand": { "title": "expand", "description": "OData $expand", "type": "string" },
+      "count": { "title": "count", "description": "OData $count", "type": "boolean" }
+    }
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "CAMassRunDate": { "type": "string" },
+            "CAMassRunID": { "maxLength": 6, "type": "string" },
+            "BusinessPartner": { "maxLength": 10, "type": "string" },
+            "ContractAccount": { "maxLength": 12, "type": "string" },
+            "CADunningCounter": { "maxLength": 6, "type": "string" },
+            "CADocumentNumber": { "maxLength": 12, "type": "string" },
+            "CompanyCode": { "maxLength": 4, "type": "string" },
+            "TransactionCurrency": { "maxLength": 3, "type": "string" },
+            "CADunningAmount": { "type": "number", "description": "Dunned amount" },
+            "CANetDueDate": { "type": ["string","null"], "description": "Net due date of the item" },
+            "CADunningLevel": { "maxLength": 2, "type": "string", "description": "Dunning level for this item" },
+            "CANextDunningLevel": { "maxLength": 2, "type": "string" },
+            "CADunningNoticeIsReversed": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  }
+}
